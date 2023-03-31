@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Incident Response Playbook Flowchart</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #1976d2;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #1976d2;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Flowchart styles */
+        .flowchart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .step {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 50px;
+            width: 200px;
+            font-size: 1.2rem;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s;
+            animation-fill-mode: both;
+            animation-delay: 0.1s;
+        }
+
+        .title {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #1976d2;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .description {
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: calc(50% - 20px);
+            left: -40px;
+            z-index: -1;
+            animation: connect 1s ease-in-out;
+            animation-fill-mode: both;
+        }
+
+        .arrow:before,
+        .arrow:after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .arrow:before {
+            border-right: 5px solid #1976d2;
+            left: 8px;
+        }
+
+        .arrow:after {
+            border-left: 5px solid #1976d2;
+            right: 8px;
+            transform: rotate(180deg);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes connect {
+           
+0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        /* Media queries */
+        @media screen and (max-width: 768px) {
+            .flowchart {
+                flex-direction: column;
+            }
+
+            .step {
+                margin: 20px 0;
+            }
+
+            .arrow {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 20px;
+                width: 100%;
+                height: 20px;
+            }
+
+            .arrow:before,
+            .arrow:after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 5px;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+            }
+
+            .arrow:before {
+                border-right: 5px solid #1976d2;
+                left: -25px;
+                top: 8px;
+            }
+
+            .arrow:after {
+                border-left: 5px solid #1976d2;
+                right: -25px;
+                top: 8px;
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Incident Response Playbook Flowchart</h1>
+        <p>Follow the steps below to respond to a compromised Microsoft 365 account.</p>
+        <div class="flowchart">
+            <div class="step">
+                <div class="title">Step 1</div>
+                <div class="description">Immediately disable the user account and change the password.</div>
+            </div>
+            <div class="arrow"></div>
+            <div class="step">
+                <div class="title">Step 2</div>
+                <div class="description">Gather information on the scope of the compromise, including the time of the compromise, affected systems, and potential data loss or exfiltration.</div>
+            </div>
+            <div class="arrow"></div>
+            <div class="step">
+                <div class="title">Step 3</div>
+                <div class="description">Identify the root cause of the compromise and remediate the underlying vulnerability or misconfiguration.</div>
+            </div>
+            <div class="arrow"></div>
+            <div class="step">
+                <div class="title">Step 4</div>
+                <div class="description">Collect and preserve evidence related to the compromise, including system logs and network traffic.</div>
+            </div>
+            <div class="arrow"></div>
+            <div class="step">
+                <div class="title">Step 5</div>
+                <div class="description">Notify relevant stakeholders, including the affected user, IT team, and management, of the incident and its impact.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
